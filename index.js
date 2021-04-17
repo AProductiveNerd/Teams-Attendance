@@ -3,7 +3,14 @@ setTimeout(function myfunction() {
 		var button = document.getElementsByClassName(
 			"node_modules--msteams-bridges-components-calendar-event-card-dist-es-src-renderers-event-card-renderer-event-card-renderer__joinButton--1AeXc node_modules--msteams-bridges-components-calendar-event-card-dist-es-src-renderers-event-card-renderer-event-card-renderer__activeCall--25Ch-"
 		);
-		button[0].click();
+		var classNum = 1;
+
+		if (button.length > 1) {
+			classNum = prompt("Please enter class number", "1").valueOf();
+		}
+		var j = classNum - 1;
+		button[j].click();
+
 		setTimeout(function waitOutFunction() {
 			var joinbutton = document.getElementsByClassName("join-btn");
 			joinbutton[0].click();
